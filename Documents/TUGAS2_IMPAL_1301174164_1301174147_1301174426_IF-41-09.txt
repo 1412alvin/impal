@@ -1,0 +1,124 @@
+CREATE TABLE Customer (
+    id_customer char(6),
+    nama_customer varchar2(30),
+    alamat_customer varchar2(255),
+    no_hp varchar2(15),
+    email varchar2(30),
+    CONSTRAINT Customer_PK PRIMARY KEY (id_customer) ENABLE
+    );
+
+CREATE TABLE Toko (
+    id_toko char(6),
+    nama_toko varchar2(30),
+    alamat_toko varchar2(255),
+    rating_toko number,
+    kontak_toko varchar2(15),
+    CONSTRAINT Toko_PK PRIMARY KEY (id_toko) ENABLE
+    );
+    
+CREATE TABLE Kurir (
+    id_kurir char(6),
+    nama_kurir varchar2(30),
+    jenis_pengiriman varchar2(20),
+    ongkos_kirim number,
+    kontak_kurir varchar2(15),
+    CONSTRAINT Kurir_PK PRIMARY KEY (id_kurir) ENABLE
+    );
+    
+CREATE TABLE Produk (
+    id_produk char(6),
+    nama_produk varchar2(30),
+    kategori_produk varchar2(30),
+    jumlah_produk int,
+    harga number,
+    CONSTRAINT Produk_PK PRIMARY KEY (id_produk) ENABLE
+    );
+    
+CREATE TABLE Pembayaran (
+    kode_pembayaran char(10),
+    metode_pembayaran varchar2(20),
+    batas_pembayaran date,
+    tanggal_waktu_pembayaran date,
+    CONSTRAINT Pembayaran_PK PRIMARY KEY (kode_pembayaran) ENABLE
+    );
+
+CREATE TABLE Invoice (
+    kode_pengiriman char(20),
+    nama_penjual varchar2(30),
+    id_customer varchar2(255),
+    nama_barang varchar2(30),
+    jumlah_barang int,
+    kode_pembayaran char(20),
+    CONSTRAINT Invoice_PK PRIMARY KEY (kode_pengiriman) ENABLE,
+    CONSTRAINT Invoice_FK FOREIGN KEY (kode_pembayaran) REFERENCES Pembayaran(kode_pembayaran),
+    CONSTRAINT Invoice_FK2 FOREIGN KEY (id_customer) REFERENCES Customer (id_customer)
+    );
+
+alter SESSION set NLS_DATE_FORMAT = 'DD-MM-YYYY HH24:MI:SS';
+
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C001', 'Anto', 'Bandung', '085112989231', 'anto@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C002', 'Aan', 'Solo', '0812344687312', 'aan@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C003', 'Tara', 'Bandung', '0855543278942', 'tara@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C004', 'Gani', 'Jakarta', '0859923564311', 'gani@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C005', 'Butania', 'Purwokerto', '081112977231', 'butania@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C006', 'Julian', 'Bekasi', '0814325567531', 'julian@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C007', 'Rina', 'Solo', '0814328876665', 'rina@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C008', 'Adi', 'Yogyakarta', '0819908432211', 'adi@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C009', 'Putra', 'Bandung', '0850043201231', 'putra@gmail.com');
+INSERT INTO customer (id_customer, nama_customer, alamat_customer, no_hp, email) VALUES ('C010', 'Afwa', 'Purwokerto', '0853329082132', 'afwa@gmail.com');
+
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T011', 'Toko Sari', 'Jakarta', '5', '081224398723');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T012', 'Toko Merpati', 'Bekasi', '5', '0853345676571');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T013', 'Toko Tira', 'Bandung', '4', '0857728190381');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T014', 'Toko Bintang', 'Jakarta', '3', '0859992716152');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T015', 'Toko Rab', 'Tangerang', '4', '0818876548012');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T016', 'Toko Dira', 'Bandung', '5', '0814443222145');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T017', 'Toko Pini', 'Bekasi', '3', '0851231118932');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T018', 'Toko Pida', 'Tangerang', '4', '085109987023');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T019', 'Toko Bota', 'Jakarta', '4', '0812330009482');
+INSERT INTO Toko (id_toko, nama_toko, alamat_toko, rating_toko, kontak_toko) VALUES ('T020', 'Toko Ania', 'Tangerang', '5', '0851098293212');
+
+INSERT INTO Kurir (id_kurir, nama_kurir, jenis_pengiriman, ongkos_kirim, kontak_kurir) VALUES ('K001', 'JNE', 'Reguler', '10000', '0851231112231');
+INSERT INTO Kurir (id_kurir, nama_kurir, jenis_pengiriman, ongkos_kirim, kontak_kurir) VALUES ('K002', 'JNE', 'YES', '20000', '0851231112245');
+INSERT INTO Kurir (id_kurir, nama_kurir, jenis_pengiriman, ongkos_kirim, kontak_kurir) VALUES ('K003', 'JNE', 'Super Cepat', '25000', '0851231112546');
+INSERT INTO Kurir (id_kurir, nama_kurir, jenis_pengiriman, ongkos_kirim, kontak_kurir) VALUES ('K004', 'JT', 'Reguler', '15000', '0812300989054');
+INSERT INTO Kurir (id_kurir, nama_kurir, jenis_pengiriman, ongkos_kirim, kontak_kurir) VALUES ('K005', 'JT', 'YES', '18000', '0812377989054');
+INSERT INTO Kurir (id_kurir, nama_kurir, jenis_pengiriman, ongkos_kirim, kontak_kurir) VALUES ('K006', 'JT', 'Super Cepat', '23000', '0812389789054');
+
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P021', 'Nike', 'Running', '10', '50000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P022', 'Nike', 'Casual', '20', '60000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P023', 'Bata', 'Sport', '8', '250000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P024', 'Bata', 'Running', '10', '40000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P025', 'Adidas', 'Running', '7', '350000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P026', 'Nike', 'Running', '5', '400000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P027', 'Puma', 'Sport', '10', '250000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P028', 'Puma', 'Running', '20', '350000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P029', 'Reebook', 'Sport', '8', '300000');
+INSERT INTO Produk (id_produk, nama_produk, kategori_produk, jumlah_produk, harga) VALUES ('P030', 'converse', 'Casual', '15', '800000');
+
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B111', 'Tunai', '02-02-2018 23:00:00', '01-02-2018 08:08:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B122', 'Tunai', '10-02-2018 23:00:00', '05-02-2018 10:15:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B133', 'Transfer', '20-01-2018 23:00:00', '10-01-2018 07:20:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B144', 'Tunai', '21-01-2018 23:00:00', '18-01-2018 17:30:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B155', 'Tunai', '12-02-2018 23:00:00', '29-01-2018 12:21:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B166', 'Transfer', '02-02-2018 23:00:00', '30-01-2018 20:36:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B177', 'Transfer', '15-01-2018 23:00:00', '02-02-2018 08:55:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B188', 'Tunai', '23-02-2018 23:00:00', '20-02-2018 21:22:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B199', 'Transfer', '19-02-2018 23:00:00', '10-02-2018 15:48:00');
+INSERT INTO Pembayaran (kode_pembayaran, metode_pembayaran, batas_pembayaran, tanggal_waktu_pembayaran) VALUES ('B100', 'Transfer', '25-02-2018 23:00:00', '21-02-2018 22:10:00');
+
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD001', 'Monic', 'C001', 'Tima', '1', 'B122');  
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD002', 'Monic', 'C005', 'Chipy', '5', 'B111'); 
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD003', 'Nina', 'C001', 'Ruma', '2', 'B166'); 
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD004', 'Lona', 'C007', 'Wewe', '7', 'B177');
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD005', 'Bina', 'C004', 'Momo', '3', 'B155');
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD006', 'Bina', 'C006', 'Momo', '4', 'B133'); 
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD007', 'Monic', 'C008', 'Dimea', '2', 'B188');
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD008', 'Nina', 'C002', 'Tuta', '2', 'B100');
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD009', 'Lisa', 'C009', 'Borit', '1', 'B144'); 
+INSERT INTO Invoice (kode_pengiriman, nama_penjual, id_customer, nama_barang, jumlah_barang, kode_pembayaran) VALUES ('KD0010', 'Lona', 'C003', 'Pola', '2', 'B199'); 
+
+select id_customer, nama_customer, (jumlah_barang * harga) as "Total bayar"
+from invoice
+join customer using (id_customer)
+join produk using(nama_produk);
