@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
+  <title>Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,21 +42,21 @@
                   </div>
                   <form class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username">
+                      <input type="email" class="form-control form-control-user" name="username" aria-describedby="emailHelp" placeholder="Username">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
                     </div>
                     <div class="form-group">
-                      
+
                     </div>
                     <a href="index.html" class="btn btn-primary btn-user btn-block">
                       Login
                     </a>
-                  
+
                   </form>
                   <hr>
-               
+
                   <div class="text-center">
                     <a class="small" href="register.html">Create an Account!</a>
                   </div>

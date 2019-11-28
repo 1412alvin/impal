@@ -1,85 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin 2 - Tables</title>
-
-  <!-- Custom fonts for this template -->
-  <link href="<?php echo base_url();?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="<?php echo base_url();?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this page -->
-  <link href="<?php echo base_url();?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+<title>Tambah Barang</title>
 </head>
-
-<body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-	   <div class="sidebar-heading">
-        Data
-      </div>
-	   <li class="nav-item">
-        <a class="nav-link" href="<?php echo base_url(). 'sepatu/vbarang';  ?>">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Data Barang</span></a>
-      </li>
-      <!-- Nav Item - Pages Collapse Menu -->
-      
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-     
-
-      <!-- Divider -->
-
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -96,167 +17,21 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
-
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                    <div class="small text-gray-500">Emily Fowler · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                    <div class="status-indicator"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun · 1d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                    <div class="status-indicator bg-warning"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
+          <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo <?php echo $this->session->userdata('name');?></span>
+                <img class="img-profile rounded-circle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARsAAACyCAMAAABFl5uBAAAAM1BMVEXEzeD////Ayt7g5e73+Pvs7/W+yN3Z3+vK0uPd4u37/P3y9PjGzuHV2+nq7fTl6fHP1uW6MLviAAAElElEQVR4nO2dC5aDIAxFNVb81db9r3a0nfac6UhbSPj4yF2B3hNDgIBVpSiKoiiKoigZQESpHyE/iExV9fMwDEvqR8kKMn13ncb6ly7182TCFi5d+9Sy0aZ+phxYU8vSnOoXOk0463fUtK9eVubS1RD1l3FHTF0vhatZI2ZfzIpJ/XBJMfNkE1O2G6o6a8jcmPpSPyrzwczGUGTo0PLZzBY65/JChy7fmNkobRz/MmjuXIuSY5rvzdy+q9QPHA/aK4HfMRYzXtG/WdNnCqmQfdQUkpH91KyVDr4c45pryokcGnzVrDkn9cMHpvdXU9fYQ7nxTDZ3TtBfVcdRg10h88JmpU/9BuGYmWrqE+ySxfdzbytz6ncIBltN3aJmHNYA/kvqdwgFO93UsNmY3FZt9gFNOOrGjrqxo27siLgBbccRcdNgFjjqxo66seO89aJu1E2lbt6hbuyoGzvqxo7Ash+uG40bK7474epG3aibfdSNHXVjR93YUTd21I0ddWNH3dhRN3bUjR11Y4XYHW2wbs7DF8fsPjMYPDkkIWZlmvBat4yMmg24dgF1Y8cIfVOIbkQWi++kfhVxBN3A9V+rGzt0VTc2RJpvbkxw9Q33eBC0G4mm9BuAh6jOUm4AZ5tihTFc6SdYGAMe9xUrcBBP+wolY8hjiULJGDAVC7VtoR4ukziSiFj5bXDuoniCGTacO0ye4N69yh6qQL+ojYXrBnAu9YC9ewdYEz9gD+OIdd8DZsKBvgCHWeJA1sQPmAsVwOmG7QY5bJjJ+ALthreiDnpu/gnHDfIIXvE+KrzGmxcY0wboUWrDf9owgX9SFSNwAPdeXvHdb4CeLzzw7IpEXfD7i9ekqoCrnTfIYzYOP34/8JADP34/cd8bR9zo3Yec46YcN+7bv+W4cc83xbgh95WKcty494yW48Z92lCOG/dFnFJKP4+4GfHXJ37xONRajBuPnRh1o258FimKceOxLFqKG48lihHwVPge3eBe+o3XIfVjR8C7y2RM/eTBYZz4gG6+2eA0boG7YZ1oBd+FoXd/mf8E+MYm63og8PYbVk8bcOP1Bq8xHbo4Npx0A77vyzzPgNxKwW7ZR975ZaoBPiIkcO4O1Y3E/X6IN9itYhaRC3BOXQVmh6iTuBPyTrsABY/p5e5MujEOPYQdMh2v4Nun7Q4fPHQWu0rqH82RM8+af+UuZ9ujnemYesgMcvnXxtgc0A5J518rl4MNW6E/pr9Mx6kIqZrDf0wvXM9HsEPUyN0468Cal1O/+gfoLHMBkA9jl3NejptmdmhyrZdpDlEAO9L2+S0qE8VPwPtMS2aflhGcZ7M5ZTTXWmMmydBkZxwyiR0j8k8KaYYMZqLZxcyTa+LYMblk4F1SrmJQn8Go/Y6xSZSVqUpXA39PkgsBjdgF6GE5LbHtUJV4euBA5N4UnyPe6Yh6uNyEWyEPQhtvkiX4j45IRJNztKjZiNScLHINcXTijFbsy2TTEOM0rPt9CXkQ4XJAoRvhExC+rV3sty7RCd4Qd8xEfCd04Aj+mi06ocdxwd9kRif031KO7MZ5GP8BqZRCubvOZ/YAAAAASUVORK5CYII=">
               </a>
-              <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+
+
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -282,40 +57,40 @@
             <div class="card-body">
 			 <table class="table table-condensed col-md-5">
              <form method="post" action="<?php echo base_url(). 'sepatu/tambahbarang'; ?>">
-			 
+
 			 <tr>
 				<div class="form-group">
-					<td>Kode Barang</td> 
-					<td colspan="2"><input class = "form-control" type="text" name="kode" value=""></td>
+					<td>Kode Barang</td>
+					<td colspan="2"><input class = "form-control" type="text" name="kode" value="" required></td>
 				</div>
 			</tr>
 			<tr>
 				<div class="form-group">
-					<td>Merk</td> 
-					<td colspan="2"><input class = "form-control" type="text" name="merk" value=""></td>
+					<td>Merk</td>
+					<td colspan="2"><input class = "form-control" type="text" name="merk" value="" required></td>
 				</div>
 			</tr>
 			 <tr>
 				<div class="form-group">
-					<td>Ukuran</td> 
-					<td colspan="2"><input class = "form-control" type="number" name="ukuran" value="0"></td>
+					<td>Ukuran</td>
+					<td colspan="2"><input class = "form-control" type="number" name="ukuran" value="0" required></td>
 				</div>
 			</tr>
 			 <tr>
 				<div class="form-group">
-					<td>Jumlah</td> 
-					<td colspan="2"><input class = "form-control" type="number" name="jumlah" value="0"></td>
+					<td>Jumlah</td>
+					<td colspan="2"><input class = "form-control" type="number" name="jumlah" value="0" required></td>
 				</div>
 			</tr>
 			 <tr>
 				<div class="form-group">
-					<td>Harga</td> 
-					<td colspan="2"><input class = "form-control" type="number" name="harga" value="0"></td>
+					<td>Harga</td>
+					<td colspan="2"><input class = "form-control" type="number" name="harga" value="0" required></td>
 				</div>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
-				<td><input class ="btn btn-info" type="submit" value="Submit"><td>
+				<td><input class ="btn btn-info" type="submit" value="Tambah Barang"><td>
 			</tr>
 			 </form>
            </table>
@@ -332,7 +107,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Satya Sepatu 2019</span>
           </div>
         </div>
       </footer>
@@ -359,10 +134,10 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Apakah anda yakin?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="<?php echo base_url();?>Sepatu/login">Logout</a>
         </div>
       </div>
     </div>
