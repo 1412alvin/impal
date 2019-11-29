@@ -70,7 +70,7 @@
                       <th>Jenis Pembayaran</th>
                     </tr>
                   </thead>
-				   <?php foreach ($datapemesanan as $row) { ?>
+				   <?php foreach ($barang as $row) { ?>
                   <tbody>
 				    <tr>
 					 <td><?php echo $row->kodepesanan ?></td>

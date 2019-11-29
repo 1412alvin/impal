@@ -37,7 +37,7 @@ function __construct()
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-    if($username == 'admin') {
+    if($username == 'admin' &&$password=='admin') {
       $checking = $this->M_sepatu->check_login('login_admin', array('username' => $username), array('password' => $password));
 
                 //jika ditemukan, maka create session
@@ -104,7 +104,7 @@ function __construct()
   function vpemesanan()
   {
     $this->load->view('Admin/v_header');
-    $data['barang'] = $this->M_sepatu->tampilbarang()->result();
+    $data['barang'] = $this->M_sepatu->tampilpesanan()->result();
     $this->load->view('Admin/v_pemesanan',$data);
   }
 
@@ -142,7 +142,8 @@ function __construct()
     $password = $this->input->post('password');
     $nama = $this->input->post('nama');
     $email = $this->input->post('email');
-
+    if ($username !="admin")
+    {
     $data = array(
 			'username' => $username,
       'password' => $password,
@@ -150,7 +151,20 @@ function __construct()
       'email' => $email
 			);
     $this->M_sepatu->tambahakun($data);
-    redirect('Sepatu/login');
+      echo '<script type="text/javascript">
+             alert("Berhasil Login");
+      </script>';
+    $this->load->view('Admin/login');
+
+
+
+  }else {
+
+    echo '<script type="text/javascript">
+             alert("Login Gagal");
+      </script>';
+    $this->load->view('Admin/register');
+  }
   }
 	function deletebarang($kode)
 	{

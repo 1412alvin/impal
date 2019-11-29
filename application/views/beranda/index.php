@@ -54,8 +54,8 @@
             </div>
         </div>
         <center>
-          <button style="width: 250px; height: 100px; background-color : #0C79B3;">
-            <a style="font-size : 35px; color : white;" href="<?php echo base_url(); ?>Sepatu/login">Mulai Belanja </a>
+          <button style="width: 250px; height: 100px; background-color : #0C79B3; ">
+            <a style="font-size : 35px; color : white; text-decoration: none;" href="<?php echo base_url(); ?>Sepatu/login">Mulai Belanja </a>
           </button>
         </center>
     </section>
